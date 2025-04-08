@@ -10,7 +10,8 @@ app = FastAPI()
 # Allow frontend (e.g., GitHub Pages) to fetch from this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],  # allow your frontend dev server
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
